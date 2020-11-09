@@ -11,6 +11,12 @@
         width: 100%;
     }
 
+    .flex-column{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .col100,
     .col75,
     .col60,

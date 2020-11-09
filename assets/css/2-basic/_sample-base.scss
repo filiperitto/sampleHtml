@@ -7,27 +7,59 @@ header {
     z-index: 99;
     transition: all 300ms ease-in-out;
     background: transparent;
+    color: #fff;
 
     .wrap {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
+        align-items: center;   
+    }
 
-        .logo {
-            margin: 0;
+    .logo {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    nav {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: #606060;
+        transition: all .3s ease-in-out;
+        @include respond-to-min(750){
+            width: auto;
+            height: auto;
+            position: relative;
+            top: auto;
+            right: auto;
+            background: transparent;
         }
+        ul {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            list-style: none;
+            display: flex;
+            margin: 80px 0 0 0;
+            padding: 0;
 
-        nav {
-            ul {
-                list-style: none;
-                display: flex;
+            @include respond-to-min(750){
                 align-content: space-between;
                 justify-content: center;
+                flex-direction: row;
+                margin: 0;
+            }
 
-                li {
-                    margin: 0 10px;
+            li {
+                margin: 0 10px;
 
-                    a {}
+                a {
+                    color: #fff;
+                    font-weight: 600;
                 }
             }
         }
@@ -35,6 +67,32 @@ header {
 
     &.active {
         background: #fff;
+
+        .logo {
+            color: #303030;
+        }
+
+        nav {
+            ul {
+                li {
+                    a {
+                        color: #303030;
+                    }
+                }
+            }
+        }
+
+        .hamb{
+            span{
+                background: #202020;
+            }
+        }
+    }
+
+    &.open{
+        nav{
+            right: 0;
+        }
     }
 }
 
@@ -55,13 +113,13 @@ section {
 }
 
 // Hero Section ::::
-#hero {
+.moduleHero-1 {
     width: 100%;
     height: 100vh;
     background: #2960c9;
     float: left;
     background: #ccc;
-    //background: url(../img/bg-hero-sample.jpg) no-repeat top center;
+    background: url(../img/bg-hero-sample.jpg) no-repeat top center;
     background-size: cover;
     position: relative;
     z-index: 0;
@@ -75,10 +133,28 @@ section {
         align-items: center;
         flex-direction: column;
         z-index: 1;
+        h1{
+            color: #fff;
+        }
+        p{
+            color: #fff;
+        }
+    }
+
+    .mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #303030;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
     }
     
     .diagonal-shape {
         display: block;
+
+        display: none;
         width: 100%;
         height: 100%;
         background: transparent;
@@ -93,10 +169,84 @@ section {
 }
 
 // About Section ::::
-#about {}
+.moduleAbout-2 {
+    .wrapper-video{
+        width: 100%;
+        position: relative;
+        .placeholder{
+            width: 100%;
+        }
+        button{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .modalvideo{
+        width: 100%;
+        height: 100%;
+        background: rgba( #202020, 0.8);
+        position: fixed;
+        z-index: 103;
+        top: 0;
+        left: 0;
+        display: none;
+        &.open{
+            display: block;
+        }
+        .modal{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .wrapper-box{
+                width: 65%;
+                //height: 100%;
+                position: relative;
+                z-index: 2;
+                padding: 15px;
+                display: table;
+                margin: auto;
+                .embedWrapper{
+                    position: relative;
+                    display: block;
+                    height: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    padding-bottom: 56.25%;
+                    iframe{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            .dumie-box-modal{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
 
 // Clients Section ::::
-#clients {
+.moduleClients-1 {
     .logo-container {
         width: 100%;
         height: auto;
@@ -127,7 +277,7 @@ section {
 }
 
 // Text Box Section ::::
-#text-box {
+.moduleText-box-1 {
     @include respond-to-max(700) {
         padding-bottom: 50px;
     }
@@ -207,6 +357,11 @@ section {
             }
         }
     }
+}
+
+// Steps Section ::::
+.moduleSteps-1{
+
 }
 
 // Pricing Section ::::

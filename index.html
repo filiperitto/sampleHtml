@@ -9,25 +9,54 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sample Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
 
+    <!-- Meta para HTML puro -->
+    <title>Sample Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta name="description" content="Isso é um template feito por FilipeRitto :)">
+    <meta name="keywords" content="Sample, HTML5, CSS3">
+    
+    <!-- Meta para Publicação do Facebook -->
+    <meta property="og:locale" content="pt-br">
+    <meta property="og:url" content="https://filiperitto.com.br/_projetos/sample/">
+    <meta property="og:title" content="sampleTemplate">
+    <meta property="og:site_name" content="sampleTemplate">
+    <meta property="og:description" content="Isso é um template feito por FilipeRitto :)">
+    <meta property="og:image" content="https://filiperitto.com.br/_projetos/ola_podcast/assets/img/placeholder-facebook-meta.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Meta para Publicação do Twitter -->
+    <meta name="twitter:site" content="@sampleTemplate">
+    <meta name="twitter:title" content="sampleTemplate">
+    <meta name="twitter:description" content="Isso é um template feito por FilipeRitto :)">
+    <meta name="twitter:url" content="https://filiperitto.com.br/_projetos/sample/">
+    <meta name="twitter:image" content="https://filiperitto.com.br/_projetos/ola_podcast/assets/img/placeholder-facebook-meta.jpg">
+    <meta name="twitter:card" content="summary">
+
+
+    <link rel="canonical" href="https://filiperitto.com.br/_projetos/sample/"/> <!-- Tag exclusiva da Home -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
 
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Script para gerar searchbox na pesquisa do google https://developers.google.com/search/docs/guides/sd-policies#nesting
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://www.example.com/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://query.example.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+    </script> -->
 
 </head>
 
@@ -35,23 +64,28 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-
-    <header class="clearfix">
+    <header id="header" class="clearfix">
         <div class="wrap">
-            <p class="logo">Sample Template</p>
+            <div class="logo">Sample Template</div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="itemNav"><a href="#">Home</a></li>
+                    <li class="itemNav"><a href="#">About</a></li>
+                    <li class="itemNav"><a href="#">Contact</a></li>
                 </ul>
             </nav>
+            <div id="hamb" class="hamb">
+                <div class="hamb-content">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="main">
-        <section id="hero">
+        <section id="hero-1" class="moduleHero-1">
             <div class="wrap">
                 <h1 class="hero-title">Hero Section</h1>
                 <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor.</p>
@@ -59,28 +93,39 @@
             <svg class="diagonal-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
               <polygon points="100 0 100 10 0 10" />
             </svg>
+            <div class="mask"></div>
         </section>
 
-        <section id="about">
+        <section id="about-1" class="moduleAbout-1">
             <div class="wrap">
                 <h1 class="title">About Section</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
             </div>
         </section>
 
-        <section id="about2">
+        <section id="about-2" class="moduleAbout-2">
             <div class="wrap grid">
                 <h1 class="title">About Section 2</h1>
                 <div class="col45">
                     <div class="wrapper-video">
-                        <button>
+                        <button class="cta-videoAbout">
                             <img src="assets/img/svg/video-play.svg">
                         </button>
-                        <img src="./assets/img/placeholder-video.png">
+                        <img src="./assets/img/placeholder-video.png" class="placeholder">
                     </div>
-                    <div class="modalvideo"></div>
+                    <div id="modalAbout" class="modalvideo">
+                        <div class="modal">
+                            
+                            <div class="dumie-box-modal cta-videoAbout"></div>
+                            <div class="wrapper-box">
+                                <div class="embedWrapper">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/M9GOFJc9kvk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col55">
+                <div class="col55 flex-column">
                     <h1>
                         Lorem ipsum dolor 
                         sit amet consectetur
@@ -92,7 +137,7 @@
             </div>
         </section>
 
-        <section id="clients">
+        <section id="clients-1" class="moduleClients-1">
             <div class="wrap">
                 <h1 class="title">Logos Section</h1>
                 <div class="logo-container">
@@ -128,7 +173,7 @@
             </div>
         </section>
 
-        <section id="text-box">
+        <section id="text-box" class="moduleText-box-1">
             <!-- Trusted Info -->
             <h1 class="title">Texts Section</h1>
             <div class="wrap grid">

@@ -1,14 +1,19 @@
 $(document).ready(function () {
 
     // Hamburg Menu animation
-    $('.hamburger-container').click(function () {
-        $('#hamburger').toggleClass('open');
-        $('header').toggleClass('open');
+    $('.hamb').click(function () {
+        $('#hamb').toggleClass('open');
+        $('#header').toggleClass('open');
     });
-
-    $('.ancor').click(function () {
-        $('#hamburger').toggleClass('open');
-        $('header').toggleClass('open');
+    
+    $('.itemNav').click(function () {
+        $('#hamb').toggleClass('open');
+        $('#header').toggleClass('open');
+    });
+    
+    $('.cta-videoAbout').click(function () {
+        $('#modalAbout').toggleClass('open');
+        $('body').toggleClass('scrollhidden');
     });
 
 
