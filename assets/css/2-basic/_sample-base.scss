@@ -181,6 +181,12 @@ section {
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+            svg{
+                width: 30px;
+                path{
+                    fill: #fff;
+                }
+            }
         }
     }
     .modalvideo{

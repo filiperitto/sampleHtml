@@ -11,6 +11,7 @@ $(document).ready(function () {
         $('#header').toggleClass('open');
     });
     
+    
     $('.cta-videoAbout').click(function () {
         $('#modalAbout').toggleClass('open');
         $('body').toggleClass('scrollhidden');
