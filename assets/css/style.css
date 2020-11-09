@@ -727,6 +727,33 @@ a {
 h1, h2, h3, h4, h5, h6 {
   color: #222;
   font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.gigantic icon,
+h1 icon, h2 icon, h3 icon, h4 icon, h5 icon, h6 icon {
+  width: 20px;
+  height: 20px;
+  background: #303030;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  color: #fff;
+  margin-right: 10px;
 }
 
 .gigantic {
@@ -1337,13 +1364,28 @@ section .title {
   }
 }
 
-#pricing h1 {
+.moduleCards .card {
+  padding: 30px;
+  background: #606060;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.moduleCards .card icon svg {
+  width: 48px;
+}
+
+.moduleCards .card h4 {
+  color: #fff;
+}
+
+.modulePricing h1 {
   color: #062953;
   text-align: center;
   margin-bottom: 80px;
 }
 
-#pricing .wrap {
+.modulePricing .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1356,14 +1398,14 @@ section .title {
 }
 
 @media only screen and (max-width: 700px) {
-  #pricing .wrap {
+  .modulePricing .wrap {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     padding: 0;
   }
 }
 
-#pricing .wrap .box-pricing {
+.modulePricing .wrap .box-pricing {
   width: 390px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1378,24 +1420,24 @@ section .title {
 }
 
 @media only screen and (max-width: 1030px) {
-  #pricing .wrap .box-pricing {
+  .modulePricing .wrap .box-pricing {
     width: 290px;
   }
 }
 
 @media only screen and (max-width: 780px) {
-  #pricing .wrap .box-pricing {
+  .modulePricing .wrap .box-pricing {
     width: 215px;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  #pricing .wrap .box-pricing {
+  .modulePricing .wrap .box-pricing {
     display: none;
   }
 }
 
-#pricing .wrap .box-pricing .pop {
+.modulePricing .wrap .box-pricing .pop {
   width: 100%;
   display: block;
   height: auto;
@@ -1407,7 +1449,7 @@ section .title {
   padding: 9px 0;
 }
 
-#pricing .wrap .box-pricing .header-pricing {
+.modulePricing .wrap .box-pricing .header-pricing {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -1425,7 +1467,7 @@ section .title {
   padding: 20px 0;
 }
 
-#pricing .wrap .box-pricing .header-pricing:after {
+.modulePricing .wrap .box-pricing .header-pricing:after {
   content: '';
   width: 80%;
   height: 1px;
@@ -1434,14 +1476,14 @@ section .title {
   bottom: 0;
 }
 
-#pricing .wrap .box-pricing .header-pricing label {
+.modulePricing .wrap .box-pricing .header-pricing label {
   font-size: 18px;
   font-weight: bold;
   color: #062953;
   text-transform: uppercase;
 }
 
-#pricing .wrap .box-pricing .header-pricing a {
+.modulePricing .wrap .box-pricing .header-pricing a {
   font-size: 12px;
   color: #00A0DF;
   font-weight: 600;
@@ -1449,11 +1491,11 @@ section .title {
   text-transform: uppercase;
 }
 
-#pricing .wrap .box-pricing .header-pricing a img {
+.modulePricing .wrap .box-pricing .header-pricing a img {
   margin-right: 5px;
 }
 
-#pricing .wrap .box-pricing .main-pricing {
+.modulePricing .wrap .box-pricing .main-pricing {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -1465,7 +1507,7 @@ section .title {
           flex-direction: column;
 }
 
-#pricing .wrap .box-pricing .main-pricing .text {
+.modulePricing .wrap .box-pricing .main-pricing .text {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -1484,13 +1526,13 @@ section .title {
   padding: 25px 0;
 }
 
-#pricing .wrap .box-pricing .main-pricing .text h2 {
+.modulePricing .wrap .box-pricing .main-pricing .text h2 {
   color: #062953;
   margin: 0;
   padding: 0;
 }
 
-#pricing .wrap .box-pricing .main-pricing .text p {
+.modulePricing .wrap .box-pricing .main-pricing .text p {
   font-size: 12px;
   font-weight: bold;
   color: #062953;
@@ -1498,7 +1540,7 @@ section .title {
   margin: 0;
 }
 
-#pricing .wrap .box-pricing .main-pricing ul {
+.modulePricing .wrap .box-pricing .main-pricing ul {
   width: 100%;
   height: auto;
   margin: 0 0 20px;
@@ -1516,20 +1558,20 @@ section .title {
 }
 
 @media only screen and (max-width: 780px) {
-  #pricing .wrap .box-pricing .main-pricing ul {
+  .modulePricing .wrap .box-pricing .main-pricing ul {
     width: 215px;
     padding: 0 20px;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  #pricing .wrap .box-pricing .main-pricing ul {
+  .modulePricing .wrap .box-pricing .main-pricing ul {
     width: 100%;
     padding: 0 30px;
   }
 }
 
-#pricing .wrap .box-pricing .main-pricing ul li {
+.modulePricing .wrap .box-pricing .main-pricing ul li {
   font-size: 14px;
   color: #062953;
   opacity: 0.8;
@@ -1541,22 +1583,22 @@ section .title {
 }
 
 @media only screen and (max-width: 1030px) {
-  #pricing .wrap .box-pricing .main-pricing ul li {
+  .modulePricing .wrap .box-pricing .main-pricing ul li {
     font-size: 11px;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  #pricing .wrap .box-pricing .main-pricing ul li {
+  .modulePricing .wrap .box-pricing .main-pricing ul li {
     font-size: 14px;
   }
 }
 
-#pricing .wrap .box-pricing .main-pricing ul li.fi {
+.modulePricing .wrap .box-pricing .main-pricing ul li.fi {
   opacity: 1;
 }
 
-#pricing .wrap .box-pricing .main-pricing ul li:before {
+.modulePricing .wrap .box-pricing .main-pricing ul li:before {
   content: '';
   width: 18px;
   height: 13px;
@@ -1566,18 +1608,18 @@ section .title {
   background: url(../img/icon-check.png) no-repeat top center;
 }
 
-#pricing .wrap .box-pricing .main-pricing ul li strong {
+.modulePricing .wrap .box-pricing .main-pricing ul li strong {
   color: #062953;
   opacity: 1;
   font-size: 18px;
 }
 
-#pricing .wrap .box-pricing .main-pricing a {
+.modulePricing .wrap .box-pricing .main-pricing a {
   margin: 0 auto 30px;
   padding: 15px 45px;
 }
 
-#reviews .title {
+.moduleReviews .title {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -1594,7 +1636,7 @@ section .title {
   position: relative;
 }
 
-#reviews .title:before {
+.moduleReviews .title:before {
   content: '';
   position: absolute;
   width: 41px;
@@ -1606,16 +1648,16 @@ section .title {
   background: url(../img/icon-review.png) no-repeat top center;
 }
 
-#reviews .title h2 {
+.moduleReviews .title h2 {
   color: #062953;
   margin-bottom: 15px;
 }
 
-#reviews .title h4 {
+.moduleReviews .title h4 {
   color: #062953;
 }
 
-#reviews .slide-review {
+.moduleReviews .slide-review {
   width: 100%;
   max-width: 630px;
   height: auto;
@@ -1623,7 +1665,7 @@ section .title {
   padding-top: 25px;
 }
 
-#reviews .slide-review article {
+.moduleReviews .slide-review article {
   width: 100%;
   max-width: 630px;
   height: auto;
@@ -1641,14 +1683,14 @@ section .title {
   padding-top: 30px;
 }
 
-#reviews .slide-review article p {
+.moduleReviews .slide-review article p {
   font-size: 18px;
   text-align: center;
   line-height: 25px;
   font-style: italic;
 }
 
-#reviews .slide-review article .profile-box {
+.moduleReviews .slide-review article .profile-box {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1663,12 +1705,12 @@ section .title {
   margin: 10px 0;
 }
 
-#reviews .slide-review article .profile-box img {
+.moduleReviews .slide-review article .profile-box img {
   margin-top: 50%;
   margin-left: -40%;
 }
 
-#reviews .slide-review article label {
+.moduleReviews .slide-review article label {
   text-align: center;
   color: #062953;
   opacity: 0.8;
@@ -1677,43 +1719,43 @@ section .title {
   line-height: 25px;
 }
 
-#reviews .slide-review article .upwork-logo {
+.moduleReviews .slide-review article .upwork-logo {
   margin-top: 15px;
 }
 
-#reviews .slide-review .swiper-button-prev,
-#reviews .slide-review .swiper-button-next {
+.moduleReviews .slide-review .swiper-button-prev,
+.moduleReviews .slide-review .swiper-button-next {
   display: none;
 }
 
-#reviews .slide-review .swiper-pagination {
+.moduleReviews .slide-review .swiper-pagination {
   top: 0;
 }
 
-#reviews .slide-review .swiper-pagination .swiper-pagination-bullet {
+.moduleReviews .slide-review .swiper-pagination .swiper-pagination-bullet {
   background: #ccc;
   opacity: 1;
   margin: 0 6px;
 }
 
-#reviews .slide-review .swiper-pagination .swiper-pagination-bullet-active {
+.moduleReviews .slide-review .swiper-pagination .swiper-pagination-bullet-active {
   background: #00A0DF;
   -webkit-box-shadow: 0 0 0 3px rgba(0, 160, 223, 0.4);
           box-shadow: 0 0 0 3px rgba(0, 160, 223, 0.4);
 }
 
-#waterfall-grid {
+.moduleWaterfallgrid {
   background: #e6e6e6;
 }
 
-#waterfall-grid .grid-container {
+.moduleWaterfallgrid .grid-container {
   width: 100%;
   margin: 0;
   padding: 0;
   display: block;
 }
 
-#waterfall-grid .grid-container .my-grid {
+.moduleWaterfallgrid .grid-container .my-grid {
   padding: 0;
   width: 100%;
   height: auto;
@@ -1722,7 +1764,7 @@ section .title {
   text-align: center;
 }
 
-#waterfall-grid .grid-container .my-grid .item {
+.moduleWaterfallgrid .grid-container .my-grid .item {
   background-color: transparent;
   text-align: center;
   display: block;
@@ -1732,7 +1774,7 @@ section .title {
   padding: 10px;
 }
 
-#waterfall-grid .grid-container .my-grid .item .pin-card {
+.moduleWaterfallgrid .grid-container .my-grid .item .pin-card {
   width: 100%;
   height: auto;
   background: #fff;
@@ -1742,12 +1784,12 @@ section .title {
           box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.15);
 }
 
-#waterfall-grid .grid-container .my-grid .item .pin-card .img-wrap img {
+.moduleWaterfallgrid .grid-container .my-grid .item .pin-card .img-wrap img {
   width: 100%;
   height: auto;
 }
 
-#waterfall-grid .grid-container .my-grid .item .pin-card .pin-body {
+.moduleWaterfallgrid .grid-container .my-grid .item .pin-card .pin-body {
   width: 100%;
   height: auto;
   background: #fff;
@@ -1757,12 +1799,12 @@ section .title {
   margin-top: -10px;
 }
 
-#waterfall-grid .grid-container .my-grid .item .pin-card .pin-body h4 {
+.moduleWaterfallgrid .grid-container .my-grid .item .pin-card .pin-body h4 {
   margin: 0;
   padding: 0;
 }
 
-#waterfall-grid .grid-container .my-grid .item .pin-card .pin-body p {
+.moduleWaterfallgrid .grid-container .my-grid .item .pin-card .pin-body p {
   margin: 0;
   padding: 0;
 }

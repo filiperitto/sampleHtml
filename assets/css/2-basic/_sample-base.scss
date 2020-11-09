@@ -370,8 +370,25 @@ section {
 
 }
 
+.moduleCards{
+    .card{
+        padding: 30px;
+        background: #606060;
+        border-radius: 3px;
+        color: #fff;
+        icon{
+            svg{
+                width: 48px;
+            }
+        }
+        h4{
+            color: #fff;
+        }
+    }
+}
+
 // Pricing Section ::::
-#pricing {
+.modulePricing {
     h1 {
         color: $blue;
         text-align: center;
@@ -562,7 +579,7 @@ section {
 }
 
 // Reviews Section ::::
-#reviews {
+.moduleReviews {
     .title {
         width: 100%;
         height: auto;
@@ -672,7 +689,7 @@ section {
 }
 
 // Waterfall Section ::::
-#waterfall-grid{ 
+.moduleWaterfallgrid{ 
     background: #e6e6e6;
     .grid-container{
         width: 100%;

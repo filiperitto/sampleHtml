@@ -197,6 +197,20 @@ a{
 h1, h2, h3, h4, h5, h6{
     color: #222;
     font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    icon{
+        width: 20px;
+        height: 20px;
+        background: #303030;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+        margin-right: 10px;
+    }
 }
   
 
