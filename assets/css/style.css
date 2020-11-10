@@ -1285,6 +1285,7 @@ section {
   float: left;
   position: relative;
   padding: 60px 0;
+  outline: none;
 }
 
 section .title {
