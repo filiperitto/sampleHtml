@@ -1,3 +1,43 @@
+//== Component Section ::::
+.btn {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #214EE3;
+    padding: 10px 15px 10px;
+    border-radius: 27px;
+    border: 2px solid #214EE3;
+    &:hover{
+        background: #0D3789;
+        border: 2px solid $blue;
+    }
+    &:active{
+        border: 0;
+        transform: scale(.96)
+    }
+}
+
+.accordion{
+    .item{
+        border-bottom: 1px solid #C2C2C2;
+        .acc-heading{
+            display: block;
+            padding: 11px 22px;
+            &.active{
+                color: #FFAF19;
+            }
+        }
+        .acc-content{
+            margin: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            .inner{
+                padding: 0 22px 22px;
+            }
+        }
+    }
+}
+
 // Header Section ::::
 header {
     width: 100%;
@@ -370,7 +410,11 @@ section {
 
 }
 
+// Cards Section ::::
 .moduleCards{
+    .card-box{
+        padding: 0 15px;
+    }
     .card{
         padding: 30px;
         background: #606060;
@@ -579,6 +623,33 @@ section {
 }
 
 // Reviews Section ::::
+.glider{
+}
+.glider-slide{
+    //min-width: inherit;
+}
+.glider-next, 
+.glider-prev{
+    width: 32px;
+    height: 32px;
+    background: #696969;
+    position: absolute;
+    top: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 50px;
+    &.disabled{
+        opacity: 0;
+    }
+}
+
 .moduleReviews {
     .title {
         width: 100%;
@@ -617,6 +688,7 @@ section {
         height: auto;
         margin: 0 auto;
         padding-top: 25px;
+        position: relative;
 
         article {
             width: 100%;
@@ -747,8 +819,23 @@ section {
     }
 }
 
+// Blog Section ::::
+.moduleBlog{
+   .loop-blog{
+       display: flex;
+       flex-wrap: wrap;
+       .blog-card{
+           .thumb-img{
+               img{
+                   width: 100%;
+               }
+           }
+       }
+   } 
+}
+
 // Faq Section ::::
-#faq {
+.moduleFaq {
     background: $gray;
 
     .title {
@@ -776,84 +863,6 @@ section {
 
             @include respond-to-max(700) {
                 width: 100%;
-            }
-
-            .cards {
-                width: 100%;
-                height: auto;
-                padding: 10px;
-                box-sizing: border-box;
-
-                @include respond-to-max(700) {
-                    width: 100%;
-                }
-
-                .card-container {
-                    width: 100%;
-                    background: $white;
-                    border-radius: 5px;
-                    display: table;
-                    padding: 30px 60px 30px 30px;
-
-                    @include respond-to-max(700) {
-                        padding: 30px 10px 30px 20px;
-                    }
-
-                    .accordion-group__accordion-heading {
-                        font-size: 18px;
-                        margin: 0;
-
-                        .accordion-group__accordion-btn {
-                            cursor: pointer;
-                            display: flex;
-                            align-items: baseline;
-
-                            &.accordion-group__accordion-btn_expanded {
-                                i {
-                                    .first {
-                                        opacity: 0;
-                                    }
-                                }
-                            }
-
-                            i {
-                                margin-right: 20px;
-                                position: relative;
-
-                                .first {
-                                    position: absolute;
-                                    opacity: 1;
-                                    top: 1px;
-                                    transition: all 300ms ease-in-out;
-                                }
-
-                                img {}
-                            }
-
-                            h4 {
-                                font-size: 18px;
-                                color: $blue;
-                                margin: 0;
-
-                                @include respond-to-max(700) {
-                                    font-size: 14px;
-                                }
-                            }
-                        }
-                    }
-
-                    .accordion-group__accordion-panel {
-                        p {
-                            padding-top: 25px;
-                            padding-left: 36px;
-                            line-height: 26px;
-
-                            @include respond-to-max(700) {
-                                font-size: 13px;
-                            }
-                        }
-                    }
-                }
             }
         }
     }

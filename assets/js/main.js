@@ -1,92 +1,189 @@
-$(document).ready(function () {
+//-== Header fixed on top animation
+(function () {
 
-    // Hamburg Menu animation
-    $('.hamb').click(function () {
-        $('#hamb').toggleClass('open');
-        $('#header').toggleClass('open');
-    });
-    
-    $('.itemNav').click(function () {
-        $('#hamb').toggleClass('open');
-        $('#header').toggleClass('open');
-    });
-    
-    
-    $('.cta-videoAbout').click(function () {
-        $('#modalAbout').toggleClass('open');
-        $('body').toggleClass('scrollhidden');
-    });
+    var headerScroll = getId('header-main'),
+        scrollHeight = 10,
+        classHeader = 'active';
 
+    //SCROLL
+    window.addEventListener("scroll", scrollOn);
 
-    // Cache selectors
-    var lastId,
-        topMenu = $(".menu-item, .hero"),
-        // All list items
-        menuItems = topMenu.find("a"),
-        // Anchors corresponding to menu items
-        scrollItems = menuItems.map(function () {
-            var item = $($(this).attr("href"));
-            if (item.length) {
-                return item;
-            }
-        });
+    function scrollOn() {
+        animatedScroll(headerScroll, classHeader, scrollHeight);
+    }
 
-    // Bind click handler to menu items
-    // so we can get a fancy scroll animation
-    menuItems.click(function (e) {
-
-        var href = $(this).attr("href")
-        //offsetTop = href === "#" ? 0 : $(href).offset().top+2;  
-        $('html, body').stop().animate({
-            scrollTop: href === "#" ? 0 : $(href).offset().top - 150
-        }, 1000);
-
-        e.preventDefault();
-    });
-
-
-    // MAIN MENU ANIMATION
-    // Menu change
-    var nav = $('header');
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 10) {
-            nav.addClass("active");
+    //Função que on scroll muda o comportamento do elemento
+    function animatedScroll(element, classN, height) {
+        y = pageYOffset; //resgata do objeto window o valor pageYOffset e guarda na variável
+        if (y > height) {
+            element.className = classN;
         } else {
-            nav.removeClass("active");
+            element.className = '';
         }
-    });
+    }
+
+    // Função toggle adiciona ou tira a class do elemento
+    function toggle(element, classe) {
+        element.className = element.className ? '' : classe;
+    }
+
+    //Função que retorna o id do elemento
+    function getId(id) {
+        return document.getElementById(id);
+    }
 
 
-});
+})(); 
+//========== /Header fixed on top animation
 
-// Slider's swipe god
 
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+
+
+
+
+//-== HamburgerMenu Toggle
+function hamburgueToggle() {
+    document.getElementById('hamb').classList.toggle('open');
+    document.getElementById('header-main').classList.toggle('open');
+}
+
+// Select all the elements with example class.
+var hambComponent = document.querySelectorAll('.hamb');
+var itemNavComponent = document.querySelectorAll('.itemNav');
+
+// Loop through the elements.
+for (var i = 0; i < hambComponent.length; i++) {
+    hambComponent[i].addEventListener('click', hamburgueToggle);
+}
+for (var i = 0; i < itemNavComponent.length; i++) {
+    itemNavComponent[i].addEventListener('click', hamburgueToggle);
+}
+//======================== /HamburgerMenu Toggle
+
+
+
+
+
+
+//-== modalAbout Toggle
+function modalAboutToggle() {
+    document.getElementById('modalAbout').classList.toggle('open');
+    document.getElementById('body').classList.toggle('scrollhidden');
+}
+
+// Select all the elements with example class.
+var modalAboutComponent = document.querySelectorAll('.cta-videoAbout');
+
+for (var i = 0; i < modalAboutComponent.length; i++) {
+    modalAboutComponent[i].addEventListener('click', modalAboutToggle);
+}
+//======================== /modalAbout Toggle
+
+
+
+
+//== Anchor Scrollsmooth
+// Vanilla JavaScript Scroll to Anchor @ https://perishablepress.com/vanilla-javascript-scroll-anchor/
+
+(function() {
+	scrollTo();
+})();
+
+function scrollTo() {
+	const links = document.querySelectorAll('.menu-item a');
+	links.forEach(each => (each.onclick = scrollAnchors));
+}
+
+function scrollAnchors(e, respond = null) {
+	const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+	e.preventDefault();
+	var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+	const targetAnchor = document.querySelector(targetID);
+	if (!targetAnchor) return;
+	const originalTop = distanceToTop(targetAnchor);
+	window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+	const checkIfDone = setInterval(function() {
+		const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+		if (distanceToTop(targetAnchor) === 0 || atBottom) {
+			targetAnchor.tabIndex = '-1';
+			targetAnchor.focus();
+			window.history.pushState('', '', targetID);
+			clearInterval(checkIfDone);
+		}
+	}, 150);
+}
+//======================== /Anchor Scrollsmooth
+
+
+
+//== Slider Card
+new Glider(document.querySelector('.cards-glider'), {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    dots: '#dots-cards',
+    arrows: {
+        prev: '.prev-cards',
+        next: '.next-cards'
     },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+});
+//======================== /Slider Card
+
+
+//== Slider Review
+new Glider(document.querySelector('.swiper-wrapper'), {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    duration: 2,
+    arrows: {
+        prev: '.prev-review',
+        next: '.next-review'
     },
 });
+//======================== /Slider Review
 
-// Accordion
 
-$(document).ready(function () {
-    'use strict';
+//== /Accordion Module
+let accTitle = document.getElementsByClassName("acc-heading");
+let accContent = document.getElementsByClassName("acc-content");
+let singleMode = true;
 
-    $('.accordion-group').ariaAccordion({
-        expandOnlyOne: true,
-        slideSpeed: 550
-    });
+for( let j=0; j<accContent.length; j++ ){
+    let realHeight = accContent[j].offsetHeight;
+    accContent[j].setAttribute("data-height", realHeight + "px");
+    accContent[j].style.height = 0;
+}
 
-});
+for( let i=0; i<accTitle.length; i++ ){
+    accTitle[i].onclick = function(){
+        let openedAcc = this.getAttribute('href').replace('#', '');
+
+        if( this.classList.contains("active") ){
+            this.classList.remove("active");
+            document.getElementById(openedAcc).style.height = 0;
+            
+            return false;
+        }
+        
+        if( singleMode ){						
+            for(let k=0; k<accTitle.length; k++) {
+                accTitle[k].classList.remove("active");
+            }
+
+            for(let j=0; j<accContent.length; j++) {
+                accContent[j].style.height = 0;
+            }
+        }
+        
+        this.classList.add("active");
+        
+        document.getElementById(openedAcc).style.height = accContent[i].getAttribute("data-height");
+        
+        return false;
+    }
+}
+//======================== /Accordion Module
+        
+
 
 //Waterfall 
 $(document).ready(function () {

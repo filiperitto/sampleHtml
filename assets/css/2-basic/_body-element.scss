@@ -4,6 +4,7 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    //scroll-behavior: smooth;
 }
 
 ::-moz-selection {
@@ -58,6 +59,7 @@ textarea {
 body {
     font-size: 16px;
     font-size: $font-regular;
+    overflow-x: hidden;
 }
 
 .wrap{
@@ -65,9 +67,11 @@ body {
     max-width: 1360px;
     height: auto;
     margin: 0 auto;
-    padding: 0 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     @include respond-to-max(700){
-        padding: 0 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
@@ -199,7 +203,6 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
-    align-self: center;
     icon{
         width: 20px;
         height: 20px;
