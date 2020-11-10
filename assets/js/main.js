@@ -186,6 +186,17 @@ for( let i=0; i<accTitle.length; i++ ){
 
 
 //Waterfall 
-$(document).ready(function () {
-    waterfall('.my-grid');
-});
+
+(function() {
+    var grid = document.querySelector('.my-grid');
+    
+    document.addEventListener("load", function() {
+        waterfall(grid);
+      }, 1000);
+
+    window.addEventListener('resize', function () {
+        waterfall(grid);
+    });
+})();
+
+

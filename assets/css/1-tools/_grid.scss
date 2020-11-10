@@ -25,6 +25,7 @@
 
     .col100,
     .col75,
+    .col70,
     .col60,
     .col50,
     .col55,
@@ -32,7 +33,8 @@
     .col40,
     .col30,
     .col33,
-    .col25{
+    .col25,
+    .col20{
         height: auto;
         padding: 0 15px 25px;
         box-sizing: border-box;
@@ -47,8 +49,24 @@
 
     }
 
+    .col80 {
+        width: 80%;
+        @include respond-to-max(800){
+            width: 100%;
+        }
+    }
+
     .col75 {
         width: 75%;
+        @include respond-to-max(800){
+            width: 100%;
+        }
+            
+
+    }
+
+    .col70 {
+        width: 70%;
         @include respond-to-max(800){
             width: 100%;
         }
@@ -115,6 +133,14 @@
         width: 25%;
         @include respond-to-max(800){
             width: 50%;
+        }
+
+    }
+
+    .col20 {
+        width: 20%;
+        @include respond-to-max(800){
+            width: 100%;
         }
 
     }
