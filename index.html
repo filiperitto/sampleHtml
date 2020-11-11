@@ -85,16 +85,35 @@
     </header>
 
     <div class="main">
-        <section id="hero-1" class="moduleHero-1">
-            <div class="wrap">
-                <h1 class="hero-title">Hero Section</h1>
-                <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor.</p>
-            </div>
-            <svg class="diagonal-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-              <polygon points="100 0 100 10 0 10" />
-            </svg>
-            <div class="mask"></div>
-        </section>
+
+        <div alt="Template tag" class="hero-box-template">
+            <section id="hero-2" class="moduleHero style2">
+                <div class="wrap grid">
+                    <div class="col50">
+                        <h1 class="hero-title">Hero Section</h1>
+                    </div>
+                    <div class="col50">
+                        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor.</p>
+                    </div>
+                </div>
+                <div class="mask"></div>
+            </section>
+        
+            <section id="hero-1" class="moduleHero grid">
+                <div class="wrap flex-column">
+                    <h1 class="hero-title">Hero Section</h1>
+                    <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor.</p>
+                </div>
+                <svg class="diagonal-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <polygon points="100 0 100 10 0 10" />
+                </svg>
+                <div class="mask"></div>
+            </section>
+        </div>
+        <div class="hero-btn-box">
+            <div class="btn prev-hero-template">Prev</div>
+            <div class="btn next-hero-template">Next</div>
+        </div>
 
         <section id="about-1" class="moduleAbout-1">
             <div class="wrap">
@@ -116,7 +135,7 @@
                     <div id="modalAbout" class="modalvideo">
                         <div class="modal">
                             
-                            <div class="dumie-box-modal cta-videoAbout"></div>
+                            <a class="dumie-box-modal cta-videoAbout"></a>
                             <div class="wrapper-box">
                                 <div class="embedWrapper">
                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/zRpazyH1WzI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

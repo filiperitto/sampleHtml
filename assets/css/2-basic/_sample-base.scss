@@ -17,6 +17,34 @@
     }
 }
 
+//-Glider Slider
+.glider{
+}
+.glider-slide{
+    //min-width: inherit;
+}
+.glider-next, 
+.glider-prev{
+    width: 32px;
+    height: 32px;
+    background: #696969;
+    position: absolute;
+    top: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 50px;
+    &.disabled{
+        opacity: 0;
+    }
+}
+
 .accordion{
     .item{
         border-bottom: 1px solid #C2C2C2;
@@ -37,8 +65,9 @@
         }
     }
 }
+//========== /Component Section
 
-// Header Section ::::
+//== Header Section ::::
 header {
     width: 100%;
     height: auto;
@@ -135,8 +164,9 @@ header {
         }
     }
 }
+//========== /Header Section
 
-// Section Defaut ::::
+//== Section Defaut ::::
 section {
     width: 100%;
     height: auto;
@@ -152,27 +182,47 @@ section {
         justify-content: center;
     }
 }
+//========== /Section Defaut
 
-// Hero Section ::::
-.moduleHero-1 {
+.hero-box-template{
+    width: 100%;
+    height: 100vh;
+    .glider-track{
+        height: 100%;
+    }
+}
+.hero-btn-box{
+    width: 300px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: -20px;
+    position: relative;
+    z-index: 3;
+    .btn{
+        cursor: pointer;
+    }
+}
+
+//== Hero Section ::::
+.moduleHero {
     width: 100%;
     height: 100vh;
     background: #2960c9;
     float: left;
     background: #ccc;
     background: url(../img/bg-hero-sample.jpg) no-repeat top center;
-    background-size: cover;
+    background-size: cover !important;
     position: relative;
     z-index: 0;
     margin: 0 auto;
     display: flex;
     padding-bottom: 0;
-
     .wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        //display: flex;
+        //justify-content: center;
+        //align-items: center;
+        //flex-direction: column;
         z-index: 1;
         h1{
             color: #fff;
@@ -181,7 +231,6 @@ section {
             color: #fff;
         }
     }
-
     .mask{
         width: 100%;
         height: 100%;
@@ -191,7 +240,6 @@ section {
         top: 0;
         left: 0;
     }
-    
     .diagonal-shape {
         display: block;
 
@@ -207,9 +255,18 @@ section {
             fill: #fff;
         }
     }
-}
 
-// About Section ::::
+    &.style2{
+        background: url(../img/bg-hero-sample2.jpg) no-repeat top center;
+        height: 80vh;
+        .mask{
+            display: none;
+        }
+    }
+}
+//========== /Hero Section
+
+//== About Section ::::
 .moduleAbout-2 {
     .wrapper-video{
         width: 100%;
@@ -291,8 +348,9 @@ section {
         }
     }
 }
+//========== /About Section
 
-// Clients Section ::::
+//== Clients Section ::::
 .moduleClients-1 {
     .logo-container {
         width: 100%;
@@ -322,8 +380,9 @@ section {
         }
     }
 }
+//========== /Clients Section
 
-// Text Box Section ::::
+//== Text Box Section ::::
 .moduleText-box-1 {
     @include respond-to-max(700) {
         padding-bottom: 50px;
@@ -405,13 +464,15 @@ section {
         }
     }
 }
+//========== /Text Box Section
 
-// Steps Section ::::
+//== Steps Section ::::
 .moduleSteps-1{
 
 }
+//========== /Steps Section
 
-// Cards Section ::::
+//== Cards Section ::::
 .moduleCards{
     .card-box{
         padding: 0 15px;
@@ -431,8 +492,9 @@ section {
         }
     }
 }
+//========== /Cards Section
 
-// Equipes Section ::::
+//== Equipes Section ::::
 .moduleEquipes{
     .loop-equipes{
         .user-one{
@@ -503,8 +565,9 @@ section {
         }
     }
 }
+//========== /Equipes Section
 
-// Pricing Section ::::
+//== Pricing Section ::::
 .modulePricing {
     h1 {
         color: $blue;
@@ -694,35 +757,9 @@ section {
         }
     }
 }
+//========== /Pricing Section
 
-// Reviews Section ::::
-.glider{
-}
-.glider-slide{
-    //min-width: inherit;
-}
-.glider-next, 
-.glider-prev{
-    width: 32px;
-    height: 32px;
-    background: #696969;
-    position: absolute;
-    top: 45%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-radius: 50px;
-    &.disabled{
-        opacity: 0;
-    }
-}
-
+//== Reviews Section ::::
 .moduleReviews {
     .title {
         width: 100%;
@@ -832,8 +869,9 @@ section {
         }
     }
 }
+//========== /Reviews Section
 
-// Waterfall Section ::::
+//== Waterfall Section ::::
 .moduleWaterfallgrid{ 
     background: #e6e6e6;
     .grid-container{
@@ -897,8 +935,9 @@ section {
         }
     }
 }
+//========== /Waterfall Section
 
-// Blog Section ::::
+//== Blog Section ::::
 .moduleBlog{
    .loop-blog{
        display: flex;
@@ -912,8 +951,9 @@ section {
        }
    } 
 }
+//========== /Blog Section
 
-// Faq Section ::::
+//== Faq Section ::::
 .moduleFaq {
     background: $gray;
 
@@ -946,8 +986,9 @@ section {
         }
     }
 }
+//========== /Faq Section
 
-// Contact Section ::::
+//== Contact Section ::::
 #contact {
 
     @include respond-to-max(700) {
@@ -1030,8 +1071,9 @@ section {
         }
     }
 }
+//========== /Contact Section
 
-// Footer Section ::::
+//== Footer Section ::::
 footer{
     width: 100%;
     height: auto;
@@ -1069,3 +1111,4 @@ footer{
     }
     
 }
+//========== /Footer Section

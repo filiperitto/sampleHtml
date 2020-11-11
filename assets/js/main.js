@@ -115,6 +115,19 @@ function scrollAnchors(e, respond = null) {
 //======================== /Anchor Scrollsmooth
 
 
+//== Hero Review
+new Glider(document.querySelector('.hero-box-template'), {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    duration: 2,
+    arrows: {
+        prev: '.prev-hero-template',
+        next: '.next-hero-template'
+    },
+});
+//======================== /Hero Review
+
+
 
 //== Slider Card
 new Glider(document.querySelector('.cards-glider'), {
@@ -185,7 +198,7 @@ for( let i=0; i<accTitle.length; i++ ){
         
 
 
-//Waterfall 
+//== Waterfall 
 
 (function() {
     var grid = document.querySelector('.my-grid');
@@ -198,5 +211,6 @@ for( let i=0; i<accTitle.length; i++ ){
         waterfall(grid);
     });
 })();
+//======================== /Waterfall
 
 
