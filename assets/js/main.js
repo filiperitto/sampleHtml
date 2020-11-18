@@ -73,8 +73,6 @@
 
 
 
-
-
 //-== HamburgerMenu Toggle
 (function(){
     function hamburgueToggle() {
@@ -206,50 +204,51 @@ new Glider(document.querySelector('.glider-reviews'), {
 
 
 //== Accordion Module
-let accTitle = document.getElementsByClassName("acc-heading");
-let accContent = document.getElementsByClassName("acc-content");
-let singleMode = true;
-
-for( let j=0; j<accContent.length; j++ ){
-    let realHeight = accContent[j].offsetHeight;
-    accContent[j].setAttribute("data-height", realHeight + "px");
-    accContent[j].style.height = 0;
-}
-
-for( let i=0; i<accTitle.length; i++ ){
-    accTitle[i].onclick = function(){
-        let openedAcc = this.getAttribute('href').replace('#', '');
-
-        if( this.classList.contains("active") ){
-            this.classList.remove("active");
-            document.getElementById(openedAcc).style.height = 0;
+(function(){
+    let accTitle = document.getElementsByClassName("acc-heading");
+    let accContent = document.getElementsByClassName("acc-content");
+    let singleMode = true;
+    
+    for( let j=0; j<accContent.length; j++ ){
+        let realHeight = accContent[j].offsetHeight;
+        accContent[j].setAttribute("data-height", realHeight + "px");
+        accContent[j].style.height = 0;
+    }
+    
+    for( let i=0; i<accTitle.length; i++ ){
+        accTitle[i].onclick = function(){
+            let openedAcc = this.getAttribute('href').replace('#', '');
+    
+            if( this.classList.contains("active") ){
+                this.classList.remove("active");
+                document.getElementById(openedAcc).style.height = 0;
+                
+                return false;
+            }
+            
+            if( singleMode ){						
+                for(let k=0; k<accTitle.length; k++) {
+                    accTitle[k].classList.remove("active");
+                }
+    
+                for(let j=0; j<accContent.length; j++) {
+                    accContent[j].style.height = 0;
+                }
+            }
+            
+            this.classList.add("active");
+            
+            document.getElementById(openedAcc).style.height = accContent[i].getAttribute("data-height");
             
             return false;
         }
-        
-        if( singleMode ){						
-            for(let k=0; k<accTitle.length; k++) {
-                accTitle[k].classList.remove("active");
-            }
-
-            for(let j=0; j<accContent.length; j++) {
-                accContent[j].style.height = 0;
-            }
-        }
-        
-        this.classList.add("active");
-        
-        document.getElementById(openedAcc).style.height = accContent[i].getAttribute("data-height");
-        
-        return false;
     }
-}
+})();
 //======================== /Accordion Module
         
 
 
 //== Waterfall 
-
 (function() {
     var grid = document.querySelector('.my-grid');
     
@@ -262,5 +261,27 @@ for( let i=0; i<accTitle.length; i++ ){
     });
 })();
 //======================== /Waterfall
+
+(function(){
+    //== Modal Toggle
+    function modalSampleToggle() {
+        document.getElementById('modalSample').classList.toggle('open');
+        document.getElementById('inv-modal').classList.toggle('open');
+        document.getElementById('body').classList.toggle('scrollhidden');
+    }
+    // Select all the elements with example class.
+    var modalSample = document.querySelectorAll('.modalcta');
+    // Loop through the elements.
+    for (var i = 0; i < modalSample.length; i++) {
+    // Add the class margin to the individual elements.
+    modalSample[i].addEventListener('click', modalSampleToggle);
+    }
+    //------------------------ Modal Header
+})();
+
+
+
+
+new ClipboardJS('.btn-copy');
 
 
